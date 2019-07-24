@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm fixed-top">
 	    <div class="container">
 	    <!-- Brand -->
-	      <a class="navbar-brand" href="#">Dolaptop</a>
+	      <a class="navbar-brand" href="aseet/index.php">Dolaptop</a>
 	    <!-- Toggler -->
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="navbar-toggler-icon"></span>
