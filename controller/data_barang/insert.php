@@ -8,5 +8,5 @@
     $query = "INSERT INTO barang  SET kode_barang = '$kode_barang', nama_barang = '$nama_barang', spesifikasi = '$spesifikasi', jumlah = '$jumlah'";
 
     mysqli_query($conn, $query);
-    header('location: ../../data_barang/index.php');
+    header('location: ../../view/stok/index.php');
 ?>

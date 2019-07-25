@@ -7,5 +7,5 @@ $query = mysqli_query($conn, "DELETE FROM barang WHERE kode_barang = '$kode_bara
 
 // mysqli_query($conn, $query);
 
-header('location: ../../data_barang/index.php');
+header('location: ../../view/stok/index.php');
 ?>
