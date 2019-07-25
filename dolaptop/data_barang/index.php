@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>COSHOP</title>
+	<title>Daftar Data Barang DoLaptop	</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
@@ -74,7 +74,7 @@
 					<td><?= $value['spesifikasi'] ?></td>
 					<td><?= $value['jumlah'] ?></td>
 					<td>
-						<a href="edit.php?kode_barang=<?= $value['kode_barang'] ?>" class="btn btn-warning">Ubah</a>
+						<a href="edit.php?kode_barang=<?= $value['kode_barang'] ?>" class="btn btn-warning">Edit</a>
 						<a href="../controller/data_barang/delete.php?kode_barang=<?= $value['kode_barang'] ?>" class="btn btn-danger">Hapus</a>
 					</td>
 				</tr>

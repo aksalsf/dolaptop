@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>COSHOP</title>
+	<title>Edit Data Barang DoLaptop</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
@@ -55,7 +55,7 @@
         <!-- akhir manggil data -->
 		<form action="../controller/data_barang/update.php" method="POST";>
 			<div class="form_group col-md-6 mx-auto border p-5 rounded text-capitalize";>
-				<h1 class="text-center">Tambah Stock Barang</h1>
+				<h1 class="text-center">Edit Data Barang</h1>
 				<hr>
 				<label class="font-weight-bold">kode barang</label>
 				<input type="text" name="kode_barang" value="<?=$row['kode_barang'] ;?>" class="form-control" required>
