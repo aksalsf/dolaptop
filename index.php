@@ -30,7 +30,7 @@
 	            <a class="nav-link" href="#">Beranda</a>
 	          </li>
 	          <li class="nav-item">
-	          	<a class="nav-link" href="#">Stok Barang</a>
+	          	<a class="nav-link" href="data_barang/index.php">Stok Barang</a>
 	          </li>
 	          <li class="nav-item">
 	          	<a class="nav-link" href="#">Transaksi</a>
