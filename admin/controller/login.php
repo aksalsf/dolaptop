@@ -17,7 +17,7 @@ $check = mysqli_num_rows($login);
  
 if($check > 0){
 	$_SESSION['username'] = $username;
-	$_SESSION['status'] = "login";
+	$_SESSION['status'] = "admin";
 	header("location:../index.php");
 }else{
 	header("location:../view/login.php?pesan=gagal");

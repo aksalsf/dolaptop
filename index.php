@@ -23,7 +23,7 @@
 	        </script>";
 		}else if($_GET['pesan'] == "logout"){
 			echo "<script type='text/javascript'>
-	        alert('Anda berhasil');
+	        alert('Anda berhasil logout');
 	        history.back(self);
 	        </script>";
 		}else if($_GET['pesan'] == "belum_login"){
@@ -47,19 +47,16 @@
 	      <div class="collapse navbar-collapse" id="navbar">
 	        <ul class="navbar-nav mr-auto">
 	          <li class="nav-item">
-	            <a class="nav-link" href="#">Beranda</a>
+	            <a class="nav-link" href="index.php">Beranda</a>
 	          </li>
 	          <li class="nav-item">
-	          	<a class="nav-link" href="#">Stok Barang</a>
-	          </li>
-	          <li class="nav-item">
-	          	<a class="nav-link" href="#">Order</a>
+	          	<a class="nav-link text-capitalize" href="view/order/view">pesanan saya</a>
 	          </li>
 	        </ul>
 	        <!-- Menampilkan button login, register atau logout -->
 	        <?php
 	        	session_start();
-	        	if (empty($_SESSION)) { 
+	        	if (empty($_SESSION)) {
 	        ?>
 	        <!-- Button sebelum login -->
 	        <form class="form-inline my-2 my-lg-0">
@@ -67,7 +64,11 @@
        			<a href="view/register.php" class="btn btn-primary text-capitalize ml-1">daftar</a>
 	        </form>
 	        <!-- Button setelah login -->
-	    	<?php } else { ?>
+	    	<?php } else { 
+	        	if ($_SESSION['status'] != "login") {
+	        	 	session_destroy();
+	        	}
+	        ?>
 	    	<a href="view/customer/profil.php" class="btn btn-outline-primary"><?= $_SESSION['username']; ?></a>
 	    	<a href="controller/customer/logout.php" class="btn btn-danger text-capitalize ml-2">logout</a>
 	    	<?php } ?>

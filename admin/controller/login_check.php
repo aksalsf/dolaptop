@@ -5,7 +5,8 @@
 	        alert('Anda berhasil logout!');
 	        history.back(self);
 	        </script>";
-		} elseif($_SESSION['status']!="login"){
+		} elseif($_SESSION['status']!="admin"){
+			session_destroy();
 			header("location:view/login.php?pesan=belum_login");
 		}
 ?>
