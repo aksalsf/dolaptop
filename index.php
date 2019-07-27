@@ -50,7 +50,7 @@
 	            <a class="nav-link" href="index.php">Beranda</a>
 	          </li>
 	          <li class="nav-item">
-	          	<a class="nav-link text-capitalize" href="view/order/view">pesanan saya</a>
+	          	<a class="nav-link text-capitalize" href="view/order/index.php">pesanan saya</a>
 	          </li>
 	        </ul>
 	        <!-- Menampilkan button login, register atau logout -->
@@ -69,7 +69,7 @@
 	        	 	session_destroy();
 	        	}
 	        ?>
-	    	<a href="view/customer/profil.php" class="btn btn-outline-primary"><?= $_SESSION['username']; ?></a>
+	    	<a href="" class="btn btn-outline-primary text-capitalize"><?= $_SESSION['nama']; ?></a>
 	    	<a href="controller/customer/logout.php" class="btn btn-danger text-capitalize ml-2">logout</a>
 	    	<?php } ?>
 	    	<!-- Button End -->
@@ -82,21 +82,23 @@
 		<div class="row">
 			<!-- Looping Start -->
 			<?php 
-				$query = mysqli_query($conn, "SELECT nama_barang, harga FROM barang");
+				$query = mysqli_query($conn, "SELECT kode_barang, nama_barang, spesifikasi, harga FROM barang");
 				foreach ($query as $value) {
 			 ?>
-			<div class="col-md-4">
+			<div class="col-md-4 mb-3">
 				<div class="card shadow-sm">
 					<img src="assets/img/laptop.png" class="card-img img-fluid">
 					<div class="card-body">
 						<h5 class="card-title text-uppercase"><?= $value['nama_barang'];  ?></h5>
+						<p class="card-text text-uppercase small text-muted"><?= $value['spesifikasi']; ?></p>
 						<p class="text-warning text-capitalize">
-							rp. <?= number_format($value['harga'], 2, ",", ".") ?>
+							<?= 'rp. ' . number_format($value['harga'], 2, ",", ".") ?>
 						</p>
 					</div>
 					<div class="card-footer">
-						<form action="controller/beli.php" method="POST" class="form-inline">
-							<input type="number" name="jumlah" class="form-control" placeholder="1">
+						<form action="controller/order/beli.php" method="POST" class="form-inline">
+							<input type="hidden" name="kode_barang" value="<?= $value['kode_barang']; ?>">
+							<input type="number" name="jumlah" class="form-control" value="1">
 							<button type="submit" class="btn btn-success text-capitalize ml-auto">beli</button>
 						</form>
 					</div>

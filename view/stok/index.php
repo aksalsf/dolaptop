@@ -1,8 +1,9 @@
 <?php include '../../controller/config.php'; ?>
+<?php include '../../controller/data_barang/login_check.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Daftar Data Barang DoLaptop	</title>
+	<title>Stok | Dolaptop</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
@@ -14,9 +15,9 @@
  
 
 </head>
-<body>
+<body class="bg-dark">
 	<!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light shadow-sm fixed-top">
 	    <div class="container">
 	    <!-- Brand -->
 	      <a class="navbar-brand" href="../index.php">Dolaptop</a>
@@ -28,13 +29,13 @@
 	      <div class="collapse navbar-collapse" id="navbar">
 	        <ul class="navbar-nav mr-auto">
 	          <li class="nav-item">
-	            <a class="nav-link" href="../index.php">Beranda</a>
+	            <a class="nav-link text-white" href="../../admin/index.php">Beranda</a>
 	          </li>
 	          <li class="nav-item">
-	          	<a class="nav-link" href="index.php">Stok Barang</a>
+	          	<a class="nav-link text-white" href="index.php">Stok Barang</a>
 	          </li>
 	          <li class="nav-item">
-	          	<a class="nav-link" href="#">Transaksi</a>
+	          	<a class="nav-link text-white" href="../transaksi/index.php">Transaksi</a>
 	          </li>
 	        </ul>
 	      </div>
@@ -42,11 +43,11 @@
     </nav>
     <!-- Navbar End -->
 	<div class="container" style="margin-top: 100px;">
-		<h1 class="text-center">Daftar Produk</h1>
+		<h1 class="text-primary text-center">Stok Barang</h1>
 		<hr>
 		<a href="add.php" class="btn btn-primary mb-2 text-right">Tambah</a>
 		<!-- Tabel -->
-		<table class="table table-bordered table-striped table-hover text-center">
+		<table class="table table-dark table-bordered table-striped table-hover text-center">
 			<thead class="thead-dark text-uppercase">
 				<tr>
 					<th>no</th>
@@ -54,6 +55,7 @@
 					<th>nama barang</th>
 					<th>spesifikasi</th>
 					<th>jumlah</th>
+					<th>harga</th>
 					<th>opsi</th>
 				</tr>
 			</thead>
@@ -73,6 +75,7 @@
 					<td><?= $value['nama_barang'] ?></td>
 					<td><?= $value['spesifikasi'] ?></td>
 					<td><?= $value['jumlah'] ?></td>
+					<td><?= $value['harga'] ?></td>
 					<td>
 						<a href="edit.php?kode_barang=<?= $value['kode_barang'] ?>" class="btn btn-warning">Edit</a>
 						<a href="../../controller/data_barang/delete.php?kode_barang=<?= $value['kode_barang'] ?>" class="btn btn-danger">Hapus</a>

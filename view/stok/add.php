@@ -1,4 +1,11 @@
 <?php include '../../controller/config.php'; ?>
+<?php 
+	
+	session_start();
+	if ($_SESSION['status'] != "admin") {
+		session_destroy();
+	}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +33,7 @@
 				<div class="collapse navbar-collapse" id="navbar">
 					<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="../index.php">Beranda</a>
+						<a class="nav-link" href="#">Beranda</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="index.php">Stok Barang</a>
@@ -44,7 +51,7 @@
 			<!-- start form -->
 			<form action="../../controller/data_barang/insert.php" method="POST";>
 				<div class="form_group col-md-6 mx-auto border p-5 rounded text-capitalize";>
-					<h1 class="text-center">Tambah Stock Barang</h1>
+					<h1 class="text-center">Tambah Stok Barang</h1>
 					<hr>
 					<label class="font-weight-bold">kode barang</label>
 					<input type="text" name="kode_barang" class="form-control" required>
@@ -57,6 +64,9 @@
 					<br>
 					<label class="font-weight-bold">jumlah</label>
 					<input type="number" name="jumlah" class="form-control" required>
+					<br>
+					<label class="font-weight-bold">harga</label>
+					<input type="number" name="harga" class="form-control" required>
 					<br>
 					<button type="submit" class="btn btn-success mt-2 text-capitalize">tambah</button>
 				</div>

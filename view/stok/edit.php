@@ -1,4 +1,5 @@
 <?php include '../../controller/config.php'; ?>
+<?php include '../../controller/data_barang/login_check.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,7 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm fixed-top">
 	    <div class="container">
 	    <!-- Brand -->
-	      <a class="navbar-brand" href="../index.php">Dolaptop</a>
+	      <a class="navbar-brand" href="#">Dolaptop</a>
 	    <!-- Toggler -->
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="navbar-toggler-icon"></span>
@@ -28,7 +29,7 @@
 	      <div class="collapse navbar-collapse" id="navbar">
 	        <ul class="navbar-nav mr-auto">
 	          <li class="nav-item">
-	            <a class="nav-link" href="../index.php">Beranda</a>
+	            <a class="nav-link" href="#">Beranda</a>
 	          </li>
 	          <li class="nav-item">
 	          	<a class="nav-link" href="index.php">Stok Barang</a>
@@ -68,6 +69,8 @@
 				<label class="font-weight-bold">jumlah</label>
 				<input type="number" name="jumlah" value="<?=$row['jumlah'] ;?>" class="form-control" required>
 				<br>
+				<label class="font-weight-bold">harga</label>
+				<input type="number" name="harga" value="<?=$row['harga'] ;?>" class="form-control" required>
 				<button type="submit" class="btn btn-success mt-2 text-capitalize">tambah</button>
 			</div>
 		</form>
