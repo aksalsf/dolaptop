@@ -11,6 +11,9 @@ $password = $_POST['password'];
  
 // menyeleksi data admin dengan username dan password yang sesuai
 $login = mysqli_query($conn,"SELECT * FROM admin WHERE username='$username' AND password='$password'");
+foreach ($login as $value) {
+	
+}
  
 // menghitung jumlah data yang ditemukan
 $check = mysqli_num_rows($login);
@@ -18,6 +21,7 @@ $check = mysqli_num_rows($login);
 if($check > 0){
 	$_SESSION['username'] = $username;
 	$_SESSION['status'] = "admin";
+	$_SESSION['nama'] = $value['name'];
 	header("location:../index.php");
 }else{
 	header("location:../view/login.php?pesan=gagal");
